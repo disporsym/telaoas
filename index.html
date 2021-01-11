@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>CHATBYME0405</title>
+  <title>Tel-AOASV001</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -34,7 +34,7 @@
 
   <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
 
-  <div id="cbmScanQRbutton" class="w3-container w3-center w3-padding-16" style="display: none;">
+  <div id="cbmScanQRbutton" class="w3-container w3-center w3-padding-16" style="display: block;">
     <div class="w3-container w3-pink w3-center w3-text-white w3-padding-16 w3-round-xlarge">
       <div class="w3-center w3-xxlarge">สวัสดีครับ</div>
       <div id="cbmmembername" class="w3-center w3-xxlarge">คุณ </div>
@@ -47,7 +47,7 @@
 
   <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
 
-  <div id="cbmregist" class="w3-container w3-center w3-padding-16" style="display:none">
+  <div id="cbmregist" class="w3-container w3-center w3-padding-16" style="display:block">
     <div class="w3-container w3-pink w3-center w3-text-white w3-padding-16 w3-round-xlarge">
       <div class="w3-center w3-xxlarge">ลงทะเบียน</div>
       <div class="w3-center w3-xxlarge">กรุณากรอกข้อมูลครับ</div>
@@ -60,7 +60,7 @@
 
   <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
 
-  <div class="w3-container w3-padding-16" style="display:none;">
+  <div class="w3-container w3-padding-16" style="display:block;">
     <br><input type="text" class="w3-border-0 w3-white w3-text-dark-grey" id="cbmlineuid" style="outline:none" placeholder="uid" readonly>
     <br><input type="text" class="w3-border-0 w3-white w3-text-dark-grey" id="cbmlineudpname" style="outline:none" placeholder="udpname" readonly>
     <br><input type="text" class="w3-border-0 w3-white w3-text-dark-grey" id="cbmlineupic" style="outline:none" placeholder="upic" readonly>
@@ -88,7 +88,7 @@ function cbmwebhookCheckRegist(webhookdatachck) {
       $.ajax(
         {
           type: "POST",
-          url: "https://script.google.com/macros/s/AKfycbwVKn5i-StiJ_b74eb3cMU6RbFZSm8NIYXWa8UdmWvagbjvUypi/exec", //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+          url: "https://script.google.com/macros/s/AKfycbxpQofezWUGztINJWsBN_ijKtWJvVGAv3gcVXPOn_BJCkx5i8DT/exec", //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
           data: webhookdatachck,
           dataType: "JSON",
           success: function (uchck) {
@@ -130,7 +130,7 @@ function cbmwebhookCheckReceipt(webhookdatachck) {
       $.ajax(
         {
           type: "POST",
-          url: "https://script.google.com/macros/s/AKfycbwVKn5i-StiJ_b74eb3cMU6RbFZSm8NIYXWa8UdmWvagbjvUypi/exec", //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+          url: "https://script.google.com/macros/s/AKfycbxpQofezWUGztINJWsBN_ijKtWJvVGAv3gcVXPOn_BJCkx5i8DT/exec", //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
           data: webhookdatachck,
           dataType: "JSON"
         }
@@ -169,7 +169,7 @@ function cbmwebhookCheckReceipt(webhookdatachck) {
       $.ajax(
         {
           type: "POST",
-          url: "https://script.google.com/macros/s/AKfycbwVKn5i-StiJ_b74eb3cMU6RbFZSm8NIYXWa8UdmWvagbjvUypi/exec", //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+          url: "https://script.google.com/macros/s/AKfycbxpQofezWUGztINJWsBN_ijKtWJvVGAv3gcVXPOn_BJCkx5i8DT/exec", //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
           data: webhookdataregist,
           dataType: "JSON"
         }
@@ -219,7 +219,7 @@ function cbmwebhookCheckReceipt(webhookdatachck) {
           //   location.replace("https://ownez.site/inno/404line"); //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx trial  
           // } //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx trial
         })
-        await liff.init({ liffId: "1655563962-LOVg7p5r" }) //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        await liff.init({ liffId: "1655566430-ap6yZxdv" }) //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
       }
 ///////////////////////////////////////////////////////////////////////////////////////////// 
