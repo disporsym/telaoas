@@ -2,7 +2,7 @@
     <html lang="en">
 
     <head>
-    <title>Tel-AOASV005</title>
+    <title>Tel-AOASV001</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -165,7 +165,7 @@
             ////////////////////////////////////////////////////////////////////////
             
     function chooseLocation() {
-            document.getElementById("siteUpdate").value = "เลือก Site/กอง/ชื่อ";
+            document.getElementById("siteUpdate").innerHTML = null;
             document.getElementById("tel1Update").value = null;
             document.getElementById("tel2Update").value = null;
             document.getElementById("mobileUpdate").value = null;
@@ -205,14 +205,14 @@
 
         function getValue(){
        
-            var addsite = document.getElementById("siteUpdate");
+            //var addsite = document.getElementById("siteUpdate");
             // var option = document.createElement("option");
             // option.text = "เลือก Site/กอง/ชื่อ";
             // addsite.add(option)
             for(var i=0; i < fullArray.length ; i++){
                 var siteArray = fullArray[i][0];
                 //console.log(siteArray)
-                //var addsite = document.getElementById("siteUpdate");
+                var addsite = document.getElementById("siteUpdate");
                 var option = document.createElement("option")
                 option.text = siteArray;
                 addsite.add(option);
@@ -225,13 +225,11 @@
             var siteValue = document.getElementById("siteUpdate").value;
                         console.log(fullArray)
                 for(var i=0; i < fullArray.length ; i++){
-   if(siteValue==fullArray[i][0]){
+                    if(siteValue==fullArray[i][0]){
                     document.getElementById("tel1Update").value = fullArray[i][1]
                     document.getElementById("tel2Update").value = fullArray[i][2]
                     document.getElementById("mobileUpdate").value = fullArray[i][3]
                 }
-          
-
             }
         }
 
