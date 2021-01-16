@@ -1,221 +1,274 @@
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-  <title>Tel-AOASV004</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script src="https://static.line-scdn.net/liff/edge/versions/2.4.0/sdk.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="script.js"></script>
-</head>
+    <head>
+    <title>Tel-AOASV005</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://static.line-scdn.net/liff/edge/versions/2.4.0/sdk.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    </head>
 
-<style>
-  html,body,h1,h2,h3,h4,h5 {font-family: 'Kanit', sans-serif;}
-</style>
+    <style>
+    html,body,h1,h2,h3,h4,h5 {font-family: 'Kanit', sans-serif;}
+    </style>
 
-<body>
-  <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+    <body>
+        <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+        
+        <div id="cbmspinerload" class="w3-center w3-padding-64" style="display: none;">
+            <div id="cbmspinerload1" class="spinner-grow text-muted"></div>
+            <div id="cbmspinerload2" class="spinner-grow text-primary"></div>
+            <div id="cbmspinerload3" class="spinner-grow text-success"></div>
+            <div id="cbmspinerload4" class="spinner-grow text-info"></div>
+            <div id="cbmspinerload5" class="spinner-grow text-warning"></div>
+            <div id="cbmspinerload6" class="spinner-grow text-danger"></div>
+            <div id="cbmspinerload7" class="spinner-grow text-secondary"></div>
+            <div id="cbmspinerload8" class="spinner-grow text-dark"></div>
+        </div>
+        
+        <!-- //////////////////////////////// Add/Update Button ////////////////////////////////////////////////////// -->
+        
+        <div id="cbmregist" class="w3-container w3-padding-48" style="display:block">
+            <div class="w3-center w3-xxlarge" style="font-weight: bold;">เพิ่มเบอร์โทรศัพท์</div><br>
+            <div class="w3-center">
+            <button class="w3-button w3-padding-16 w3-round-large w3-xlarge w3-pink w3-hover-light-grey w3-hover-text-blue" onclick="add()" style="outline:none; ">เพิ่ม</button>
+            <button class="w3-button w3-padding-16 w3-round-large w3-xlarge w3-pink w3-hover-light-grey w3-hover-text-blue" onclick="update()" style="outline:none; ">อัพเดท</button>
+            </div>
 
-  <div id="cbmspinerload" class="w3-center w3-padding-64" style="display: block;">
-    <div id="cbmspinerload1" class="spinner-grow text-muted"></div>
-    <div id="cbmspinerload2" class="spinner-grow text-primary"></div>
-    <div id="cbmspinerload3" class="spinner-grow text-success"></div>
-    <div id="cbmspinerload4" class="spinner-grow text-info"></div>
-    <div id="cbmspinerload5" class="spinner-grow text-warning"></div>
-    <div id="cbmspinerload6" class="spinner-grow text-danger"></div>
-    <div id="cbmspinerload7" class="spinner-grow text-secondary"></div>
-    <div id="cbmspinerload8" class="spinner-grow text-dark"></div>
-  </div>
+<!-- ///////////////////////////Add Form//////////////////////////////////// -->
+            <div id="add" style="display: none;">
+            <div class="w3-xxlarge">สถานที่:</div>
+            <select name="locationAdd" id="locationAdd" class="w3-white w3-padding-16 w3-large w3-round-large w3-border w3-border-grey " style="width:90%;outline:none;margin-left:5% ;">
+            <option style="font-weight: bold;" disabled selected>เลือกสถานที่</option>
+            <option value="mk">ทุ่งมหาเมฆ</option>
+            <option value="sb">สุวรรณภูมิ</option>
+            <option value="dm">ดอนเมือง</option>
+            <optgroup label="ศูนย์ต่างจังหวัด">
+                <option value="chm">ศูนย์เชียงใหม่และลูกข่าย</option>
+                <option value="psl">ศูนย์พิษณุโลกและลูกข่าย</option>
+                <option value="udn">ศูนย์อุดรธานีและลูกข่าย</option>
+                <option value="nkr">ศูนย์นครราชสีมาและลูกข่าย</option>
+                <option value="phu">ศูนย์ภูเก็ตและลูกข่าย</option>
+                <option value="srt">ศูนย์สุราษฎร์ธานีและลูกข่าย</option>
+                <option value="hyi">ศูนย์หาดใหญ่และลูกข่าย</option>
+            </optgroup>
+            <option value="oth">อื่นๆ</option>
+            <option value="abr">ต่างประเทศ</option>
+            <br><option value="emp">พนักงาน ศว.สว.</option>
+            </select><br>
+        
+            <div id="myForm">
+            <br><div class="w3-left w3-xxlarge">Site/กอง/ชื่อ:</div><br>
+            <input id="siteAdd" class="w3-white w3-padding-16 w3-large w3-border w3-border-grey w3-round-large w3-text-black" style="width:90%;outline:none;margin-left: 5%;" type="text" placeholder="Site/กอง/ชื่อ"></input><br>
+            
+            <br><div class="w3-xxlarge">เบอร์โทร 1:</div>
+            <input id="tel1Add" class="w3-white w3-padding-16 w3-large w3-border w3-border-grey w3-round-large w3-text-black" style="width:90%;outline:none;margin-left: 5%;" type="tel" placeholder="เบอร์โทร 1"></input><br>
+        
+            <br><div class=" w3-xxlarge">เบอร์โทร 2:</div>
+            <input id="tel2Add" class="w3-white w3-padding-16 w3-large w3-border w3-border-grey w3-round-large w3-text-black" style="width:90%;outline:none;margin-left: 5%;" type="tel" placeholder="เบอร์โทร 2"></input><br>
+            
+            <br><div class="w3-xxlarge">เบอร์มือถือ:</div>
+            <input id="mobileAdd" class="w3-white w3-padding-16 w3-large w3-border w3-border-grey w3-round-large w3-text-black" style="width:90%;outline:none;margin-left: 5%;" type="tel" placeholder="เบอร์มือถือ"></input><br>
+        
+    </div>
+        
+        <div class="w3-container w3-center">
+        <br><button value="submitAdd" class="w3-button w3-padding-16 w3-round-large w3-xlarge w3-pink w3-hover-light-grey w3-hover-text-blue" onclick="submit(this.value)" style="outline:none; ">SUBMIT</button>
+            <!-- <div id="test" class="w3-xxlarge" style="font-weight: bold;"></div> -->
+        </div>
+    </div>
 
-  <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
 
-  <div id="cbmregist" class="w3-container w3-center w3-padding-16" style="display:block">
-    <div class="w3-container w3-pink w3-center w3-text-white w3-padding-16 w3-round-xlarge">
-      <div class="w3-center w3-xxlarge">ลงทะเบียน</div>
-      <div class="w3-center w3-xxlarge">กรุณากรอกข้อมูลครับ</div>
-      <br><input id="cbmregistname" class="w3-white w3-padding-16 w3-center w3-large w3-border w3-round-large w3-text-pink" style="width:90%;outline:none" type="text" placeholder="ชื่อ"></input><br>
-      <br><input id="cbmregistlastname" class="w3-white w3-padding-16 w3-center w3-large w3-border w3-round-large w3-text-pink" style="width:90%;outline:none" type="text" placeholder="นามสกุล"></input><br>
-      <br><input id="cbmregistemployeeid" class="w3-white w3-padding-16 w3-center w3-large w3-border w3-round-large w3-text-pink" style="width:90%;outline:none" type="text" placeholder="รหัสพนักงาน"></input><br>
-    </div><br>
-    <button class="w3-button w3-padding-16 w3-round-large w3-xlarge w3-pink w3-hover-light-grey w3-hover-text-blue" onclick="sendRegistForm()" style="outline:none; ">SUBMIT</button>
-  </div>
+    <!-- ////////////////////////////Update Form/////////////////////////////////// -->
+    <div id="update" style="display: none;">
+        <div class="w3-xxlarge">สถานที่:</div>
+        <select name="locationUpdate" id="locationUpdate" class="w3-white w3-padding-16 w3-large w3-round-large w3-border w3-border-grey " style="width:90%;outline:none;margin-left:5% ;" onchange="chooseLocation()">
+        <option style="font-weight: bold;" disabled selected>เลือกสถานที่</option>
+        <option value="mk">ทุ่งมหาเมฆ</option>
+        <option value="sb">สุวรรณภูมิ</option>
+        <option value="dm">ดอนเมือง</option>
+        <optgroup label="ศูนย์ต่างจังหวัด">
+            <option value="chm">ศูนย์เชียงใหม่และลูกข่าย</option>
+            <option value="psl">ศูนย์พิษณุโลกและลูกข่าย</option>
+            <option value="udn">ศูนย์อุดรธานีและลูกข่าย</option>
+            <option value="nkr">ศูนย์นครราชสีมาและลูกข่าย</option>
+            <option value="phu">ศูนย์ภูเก็ตและลูกข่าย</option>
+            <option value="srt">ศูนย์สุราษฎร์ธานีและลูกข่าย</option>
+            <option value="hyi">ศูนย์หาดใหญ่และลูกข่าย</option>
+        </optgroup>
+        <option value="oth">อื่นๆ</option>
+        <option value="abr">ต่างประเทศ</option>
+        <br><option value="emp">พนักงาน ศว.สว.</option>
+        </select><br>
+    
+        <div id="myForm">
+        <br><div class="w3-left w3-xxlarge">Site/กอง/ชื่อ:</div><br>
+        <select id="siteUpdate" class="w3-white w3-padding-16 w3-large w3-round-large w3-border w3-border-grey " style="width:90%;outline:none;margin-left:5% ;"  onchange="fillInform()">
+        <option style="font-weight: bold;" disabled selected>เลือก Site/กอง/ชื่อ</option>
+        </select><br>
+        
+        <br><div class="w3-xxlarge">เบอร์โทร 1:</div>
+        <input id="tel1Update" class="w3-white w3-padding-16 w3-large w3-border w3-border-grey w3-round-large w3-text-black" style="width:90%;outline:none;margin-left: 5%;" type="tel" placeholder="เบอร์โทร 1" ></input><br>
+    
+        <br><div class=" w3-xxlarge">เบอร์โทร 2:</div>
+        <input id="tel2Update" class="w3-white w3-padding-16 w3-large w3-border w3-border-grey w3-round-large w3-text-black" style="width:90%;outline:none;margin-left: 5%;" type="tel" placeholder="เบอร์โทร 2"></input><br>
+        
+        <br><div class="w3-xxlarge">เบอร์มือถือ:</div>
+        <input id="mobileUpdate" class="w3-white w3-padding-16 w3-large w3-border w3-border-grey w3-round-large w3-text-black" style="width:90%;outline:none;margin-left: 5%;" type="tel" placeholder="เบอร์มือถือ"></input><br>
+    
+</div>
+    
+    <div class="w3-container w3-center">
+    <br><button id="submitUpdate" class="w3-button w3-padding-16 w3-round-large w3-xlarge w3-pink w3-hover-light-grey w3-hover-text-blue" onclick="submit(this.value)" style="outline:none; ">SUBMIT</button>
+        <!-- <div id="test" class="w3-xxlarge" style="font-weight: bold;"></div> -->
+    </div>
+</div>
 
-  <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+    </div>
 
-  <div class="w3-container w3-padding-16" style="display:block;">
-    <br><input type="text" class="w3-border-0 w3-white w3-text-dark-grey" id="cbmlineuid" style="outline:none" placeholder="uid" readonly>
-    <br><input type="text" class="w3-border-0 w3-white w3-text-dark-grey" id="cbmlineudpname" style="outline:none" placeholder="udpname" readonly>
-    <br><input type="text" class="w3-border-0 w3-white w3-text-dark-grey" id="cbmlineupic" style="outline:none" placeholder="upic" readonly>
-    <br><input type="text" class="w3-border-0 w3-white w3-text-dark-grey" id="cbmlineumail" style="outline:none" placeholder="umail" readonly>
-    <br><input type="text" class="w3-border-0 w3-white w3-text-dark-grey" id="cbmlineufriend" style="outline:none" placeholder="ufriend" readonly>
-    <br><input type="text" class="w3-border-0 w3-white w3-text-dark-grey" id="cbmos" style="outline:none" placeholder="Device OS" readonly>
-    <br><button class="w3-button w3-padding-16 w3-round-large w3-xlarge w3-blue w3-hover-light-grey w3-hover-text-blue" onclick="logOut()" style="outline:none; ">LOGOUT<i class="material-icons"> mouse</i></button>
-  </div>
+        <script>
 
-  <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+            ////////////////////////////////////////Global Var//////////////////////
 
-  <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+        var fullArray ;
 
-  <script>
-///////////////////////////////////////////////////////////////////////////////////////////// sendregistchck
-function sendregistchck(cbmlineuid) {
-      var webhookdatachck = {
-        "cbmtopic": "sendregistchck",
-        "cbmlineuid": cbmlineuid
-      }
-      cbmwebhookCheckRegist(webhookdatachck)
-    }
-///////////////////////////////////////////////////////////////////////////////////////////// cbmwebhookCheckRegist
-function cbmwebhookCheckRegist(webhookdatachck) {
-      $.ajax(
-        {
-          type: "POST",
-          url: "https://script.google.com/macros/s/AKfycbxpQofezWUGztINJWsBN_ijKtWJvVGAv3gcVXPOn_BJCkx5i8DT/exec", //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-          data: webhookdatachck,
-          dataType: "JSON",
-          success: function (uchck) {
-            switch (uchck.message.textcheck) {
-              case "NewUID" :
-                document.getElementById("cbmregist").style.display = "block";
-                document.getElementById("cbmspinerload").style.display = "none";
-                break;
-              case "Member" :
-                document.getElementById("cbmScanQRbutton").style.display = "block";
-                document.getElementById("cbmspinerload").style.display = "none"; 
-                document.getElementById("cbmmembername").append(uchck.message.membername);
-                break;  
-            }
-          }
-        }
-      );
-    }    
-///////////////////////////////////////////////////////////////////////////////////////////// sendReceiptchck
-function sendReceiptchck() {
-  var cbmqrcodevalue = document.getElementById("cbmqrcodevalue").value;
-      if (cbmqrcodevalue != "") {
-        var cbmlineuid = document.getElementById("cbmlineuid").value
+        ////////////////////////////////////////////////////////////////////////
+ function add(){
+        document.getElementById("add").style.display = "block";
+        document.getElementById("update").style.display = "none";
+        document.getElementById("locationAdd").value = "เลือกสถานที่";
+        document.getElementById("siteAdd").value = null;
+        document.getElementById("tel1Add").value = null;
+        document.getElementById("tel2Add").value = null;
+        document.getElementById("mobileAdd").value = null;
+        
+ }
+ 
+ function update(){
+        document.getElementById("add").style.display = "none";
+        document.getElementById("update").style.display = "block";
+        document.getElementById("locationUpdate").value = "เลือกสถานที่";
+        document.getElementById("siteUpdate").value = "เลือก Site/กอง/ชื่อ";
+        document.getElementById("tel1Update").value = null;
+        document.getElementById("tel2Update").value = null;
+        document.getElementById("mobileUpdate").value = null;
+    
+ }
+
+            ////////////////////////////////////////////////////////////////////////
+            
+    function chooseLocation() {
+            document.getElementById("siteUpdate").value = "เลือก Site/กอง/ชื่อ";
+            document.getElementById("tel1Update").value = null;
+            document.getElementById("tel2Update").value = null;
+            document.getElementById("mobileUpdate").value = null;
+
+        var location = document.getElementById("locationUpdate").value ;
+        console.log(location)
+        if (location!="สถานที่"){
         var webhookdatachck = {
-          "cbmtopic": "sendReceiptchck",
-          "cbmlineuid": cbmlineuid,
-          "cbmqrcodevalue": cbmqrcodevalue
+            "check": "sendchecksite",
+            "location": location
         }
-        cbmwebhookCheckReceipt(webhookdatachck)
-        alert("โปรดรอการตรวจสอบสักครู่")
-        liff.closeWindow()
-      }
-      else {
-        alert("กรุณากรอกเลขใบเสร็จหรือ กดปุ่ม Scan QR code ครับ")
-      }
+        cbmwebhookCheckRegist(webhookdatachck)
+        }
     }
-///////////////////////////////////////////////////////////////////////////////////////////// cbmwebhookCheckRegist
-function cbmwebhookCheckReceipt(webhookdatachck) {
-      $.ajax(
-        {
-          type: "POST",
-          url: "https://script.google.com/macros/s/AKfycbxpQofezWUGztINJWsBN_ijKtWJvVGAv3gcVXPOn_BJCkx5i8DT/exec", //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-          data: webhookdatachck,
-          dataType: "JSON"
-        }
-      );
-    }        
-///////////////////////////////////////////////////////////////////////////////////////////// sendRegistForm
-    function sendRegistForm() {
-      var cbmregistname = document.getElementById("cbmregistname").value
-      var cbmregistlastname = document.getElementById("cbmregistlastname").value
-      var cbmregistemployeeid = document.getElementById("cbmregistemployeeid").value
-      var cbmlineuid = document.getElementById("cbmlineuid").value
-      var cbmlineudpname = document.getElementById("cbmlineudpname").value
-      var cbmlineupic = document.getElementById("cbmlineupic").value
-      var cbmlineumail = document.getElementById("cbmlineumail").value
-      if (cbmregistname != "" && cbmregistlastname != "" && cbmregistemployeeid != "") {
-        var webhookdataregist = {
-          "cbmtopic": "sendRegistForm",
-          "cbmregistname": cbmregistname,
-          "cbmregistlastname": cbmregistlastname,
-          "cbmregistemployeeid": cbmregistemployeeid,
-          "cbmlineuid": cbmlineuid,
-          "cbmlineudpname": cbmlineudpname,
-          "cbmlineupic": cbmlineupic,
-          "cbmlineumail": cbmlineumail
-        }
-        cbmwebhookregist(webhookdataregist)
-        alert("โปรดรอข้อความยืนยันการสมัครสักครู่ครับ")
-        liff.closeWindow()
-      }
-      else {
-        alert("กรุณากรอกข้อมูลให้ครบถ้วนครับ")
-      }
-    }
-///////////////////////////////////////////////////////////////////////////////////////////// cbmwebhookregist
-    function cbmwebhookregist(webhookdataregist) {
-      $.ajax(
-        {
-          type: "POST",
-          url: "https://script.google.com/macros/s/AKfycbxpQofezWUGztINJWsBN_ijKtWJvVGAv3gcVXPOn_BJCkx5i8DT/exec", //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-          data: webhookdataregist,
-          dataType: "JSON"
-        }
-      );
-    }
-///////////////////////////////////////////////////////////////////////////////////////////// logOut    
-     function logOut() {
-        liff.logout()
-        window.location.reload()
-      }
+            ////////////////////////////////////////////////////////////////////////
 
-///////////////////////////////////////////////////////////////////////////////////////////// getUserProfile
-      async function getUserProfile() {
-        const profile = await liff.getProfile()
-        document.getElementById("cbmlineuid").value = profile.userId
-        document.getElementById("cbmlineudpname").value = profile.displayName
-        document.getElementById("cbmlineupic").value = profile.pictureUrl
-        document.getElementById("cbmlineumail").value = liff.getDecodedIDToken().email
-        var cbmlineuid = profile.userId
-        var cbmlineudpname = profile.displayName
-        var cbmlineupic = profile.pictureUrl
-        var cbmlineumail = liff.getDecodedIDToken().email
-        sendregistchck(cbmlineuid)
-      }
-///////////////////////////////////////////////////////////////////////////////////////////// main
-     async function main() {
+        function cbmwebhookCheckRegist(webhookdatachck) {
+        $.ajax(
+            {
+            type: "POST",
+            url: "https://script.google.com/macros/s/AKfycbzWqGZkDjNBnfZs4OVP9VRS_I_pRVFLUlrtQu-nfdZyLY_74clJlBYiBA/exec", //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            data: webhookdatachck,
+            dataType: "JSON",
+            success: function (uchck) {
+                
+                var aaa = uchck.message.aaa;
+                fullArray = aaa;
+                console.log(fullArray)
+                getValue()    
+                      
+            }
+            }
+        );
+        }    
+
+        ////////////////////////////////////////////////////////////////////////
+
+        function getValue(){
        
-        liff.ready.then(() => {
-          // if (liff.isInClient()) { //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx trial
-              if (liff.isLoggedIn()) {
-                getFriendship()
-                getUserProfile().then(() => {
-                const queryString = decodeURIComponent(window.location.search)
-                const params = new URLSearchParams(queryString)
-                if (params.get("param") !== null){
-                  document.getElementById("cbmqrcodevalue").value = params.get("param")
-                  document.getElementById("scanios").style.display = "none";                  
+            var addsite = document.getElementById("siteUpdate");
+            // var option = document.createElement("option");
+            // option.text = "เลือก Site/กอง/ชื่อ";
+            // addsite.add(option)
+            for(var i=0; i < fullArray.length ; i++){
+                var siteArray = fullArray[i][0];
+                //console.log(siteArray)
+                //var addsite = document.getElementById("siteUpdate");
+                var option = document.createElement("option")
+                option.text = siteArray;
+                addsite.add(option);
+
+         }
+       
+        }
+
+        function fillInform(){
+            var siteValue = document.getElementById("siteUpdate").value;
+                        console.log(fullArray)
+                for(var i=0; i < fullArray.length ; i++){
+   if(siteValue==fullArray[i][0]){
+                    document.getElementById("tel1Update").value = fullArray[i][1]
+                    document.getElementById("tel2Update").value = fullArray[i][2]
+                    document.getElementById("mobileUpdate").value = fullArray[i][3]
                 }
-                })
+          
 
-              }
-              else {
-                liff.login()
-              }
-          // } //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx trial
-          // else { //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx trial
-          //   location.replace("https://ownez.site/inno/404line"); //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx trial  
-          // } //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx trial
-        })
-        await liff.init({ liffId: "1655566430-ap6yZxdv" }) //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            }
+        }
 
-      }
-///////////////////////////////////////////////////////////////////////////////////////////// 
-      main();
-///////////////////////////////////////////////////////////////////////////////////////////// 
-  </script>
+        function submit(value){
+            
+            console.log(value)
+            if(value=="submitAdd"){
+            var location = document.getElementById("locationAdd").value ;
+            var site = document.getElementById("siteAdd").value ;
+            var tel1 = document.getElementById("tel1Add").value ;
+            var tel2 = document.getElementById("tel2Add").value ;
+            var mobile = document.getElementById("mobileAdd").value ;
 
+            }
+            else
+            {
+            var location = document.getElementById("locationUpdate").value ;
+            var site = document.getElementById("siteUpdate").value ;
+            var tel1 = document.getElementById("tel1Update").value ;
+            var tel2 = document.getElementById("tel2Update").value ;
+            var mobile = document.getElementById("mobileUpdate").value ;
+    
+            }
+            
+        var webhookdatachck = {
+            "check":"sendsubmitupdate",
+            "location": location,
+            "site": site,
+            "tel1": tel1,
+            "tel2": tel2,
+            "mobile":mobile
+        }
+        cbmwebhookCheckRegist(webhookdatachck)
+        
+    }
 
+        </script>
+        </body>
 
-</body>
-
-</html>
+        </html>
