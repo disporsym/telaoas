@@ -2,7 +2,7 @@
     <html lang="en">
 
     <head>
-    <title>Tel-AOASV001</title>
+    <title>Tel-AOASV002</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://static.line-scdn.net/liff/edge/versions/2.4.0/sdk.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="script.js"></script>
     <script src="https://www.w3schools.com/lib/w3.js"></script>
     </head>
 
@@ -80,7 +79,7 @@
     </div>
         
         <div class="w3-container w3-center">
-        <br><button value="submitAdd" class="w3-button w3-padding-16 w3-round-large w3-xlarge w3-pink w3-hover-light-grey w3-hover-text-blue" onclick="submit(this.value)" style="outline:none; ">SUBMIT</button>
+        <br><button value="submitadd" class="w3-button w3-padding-16 w3-round-large w3-xlarge w3-pink w3-hover-light-grey w3-hover-text-blue" onclick="submit(this.value)" style="outline:none; ">SUBMIT</button>
             <!-- <div id="test" class="w3-xxlarge" style="font-weight: bold;"></div> -->
         </div>
     </div>
@@ -106,10 +105,13 @@
         <option value="oth">อื่นๆ</option>
         <option value="abr">ต่างประเทศ</option>
         <br><option value="emp">พนักงาน ศว.สว.</option>
-        </select><br>
+        </select>
+        <br>
     
-        <div id="myForm">
-        <br><div class="w3-left w3-xxlarge">Site/กอง/ชื่อ:</div><br>
+        <br><div class="w3-left w3-xxlarge">Site/กอง/ชื่อ:  </div>
+        <div id="loading" style="display: none;"><br>
+            <div class="spinner-border spinner-border-sm text-muted" style="vertical-align:baseline;"></div>
+        </div>
         <select id="siteUpdate" class="w3-white w3-padding-16 w3-large w3-round-large w3-border w3-border-grey " style="width:90%;outline:none;margin-left:5% ;"  onchange="fillInform()">
         <option style="font-weight: bold;" disabled selected>เลือก Site/กอง/ชื่อ</option>
         </select><br>
@@ -123,12 +125,13 @@
         <br><div class="w3-xxlarge">เบอร์มือถือ:</div>
         <input id="mobileUpdate" class="w3-white w3-padding-16 w3-large w3-border w3-border-grey w3-round-large w3-text-black" style="width:90%;outline:none;margin-left: 5%;" type="tel" placeholder="เบอร์มือถือ"></input><br>
     
-</div>
+
     
     <div class="w3-container w3-center">
     <br><button id="submitUpdate" class="w3-button w3-padding-16 w3-round-large w3-xlarge w3-pink w3-hover-light-grey w3-hover-text-blue" onclick="submit(this.value)" style="outline:none; ">SUBMIT</button>
         <!-- <div id="test" class="w3-xxlarge" style="font-weight: bold;"></div> -->
     </div>
+    
 </div>
 
     </div>
@@ -169,11 +172,13 @@
             document.getElementById("tel1Update").value = null;
             document.getElementById("tel2Update").value = null;
             document.getElementById("mobileUpdate").value = null;
+            document.getElementById("loading").style.display = "block"
 
         var location = document.getElementById("locationUpdate").value ;
         console.log(location)
         if (location!="สถานที่"){
         var webhookdatachck = {
+            "topic": "html",
             "check": "sendchecksite",
             "location": location
         }
@@ -217,9 +222,10 @@
                 option.text = siteArray;
                 addsite.add(option);
 
-         }
+                }
+                document.getElementById("loading").style.display = "none"
        
-        }
+            }
 
         function fillInform(){
             var siteValue = document.getElementById("siteUpdate").value;
@@ -236,14 +242,23 @@
         function submit(value){
             
             console.log(value)
-            if(value=="submitAdd"){
+            if(value=="submitadd"){
             var location = document.getElementById("locationAdd").value ;
             var site = document.getElementById("siteAdd").value ;
             var tel1 = document.getElementById("tel1Add").value ;
             var tel2 = document.getElementById("tel2Add").value ;
             var mobile = document.getElementById("mobileAdd").value ;
-
+            var webhookdatachck = {
+            "topic": "html",
+            "check":"sendsubmitadd",
+            "location": location,
+            "site": site,
+            "tel1": tel1,
+            "tel2": tel2,
+            "mobile":mobile
+                }
             }
+
             else
             {
             var location = document.getElementById("locationUpdate").value ;
@@ -251,19 +266,18 @@
             var tel1 = document.getElementById("tel1Update").value ;
             var tel2 = document.getElementById("tel2Update").value ;
             var mobile = document.getElementById("mobileUpdate").value ;
-    
-            }
-            
-        var webhookdatachck = {
+            var webhookdatachck = {
+            "topic": "html",
             "check":"sendsubmitupdate",
             "location": location,
             "site": site,
             "tel1": tel1,
             "tel2": tel2,
             "mobile":mobile
-        }
+                }  
+            }
         cbmwebhookCheckRegist(webhookdatachck)
-        
+        alert("รอพี่เวิด Approve นะฮะ")
     }
 
         </script>
