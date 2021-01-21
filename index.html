@@ -2,7 +2,7 @@
     <html lang="en">
 
     <head>
-    <title>Tel-AOASV012</title>
+    <title>Tel-AOASV013</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -36,15 +36,23 @@
         <!-- //////////////////////////////// Add/Update Button ////////////////////////////////////////////////////// -->
         
         <div id="cbmregist" class="w3-container w3-padding-48" style="display:block">
-            <div class="w3-center w3-xxlarge" style="font-weight: bold;">เพิ่มเบอร์โทรศัพท์</div><br>
+            <div id="headerx">
             <div class="w3-center">
-            <button class="w3-button w3-padding-16 w3-round-large w3-xlarge w3-hover-light-grey w3-hover-text-blue" onclick="add()" style="outline:none;background-color: #00b900;color: white; ">เพิ่ม</button>
-            <br><a onclick="update()" style="color: #469fd6; ">อัพเดท</a>
+            <div id="addupdateheader" class="w3-center w3-xxlarge" style="font-weight: bold;">เลือกเมนู</div><br>
+            </div><br>
+            <div class="w3-center">
+            <button class="w3-button w3-padding-16 w3-round-large w3-xlarge w3-hover-light-grey w3-hover-text-blue" onclick="add()" style="outline:none;width:30%;background-color: #00b900;color: white; ">เพิ่ม</button>
+            
             <!-- <button class="w3-button w3-padding-16 w3-round-large w3-xlarge w3-hover-light-grey w3-hover-text-blue" onclick="update()" style="outline:none;background-color: #00b900;color: white; ">อัพเดท</button> -->
             </div><br>
+            <div class="w3-center">
+            <br><a href="javascript:update()"  style="color: #469fd6; font-size: 20px;">อัพเดท</a>
+            </div>
+        </div>
 
 <!-- ///////////////////////////Add Form//////////////////////////////////// -->
             <div id="add" style="display: none;">
+            <div class="w3-center w3-xxlarge" style="font-weight: bold;">เพิ่มเบอร์โทรศัพท์</div><br>
             <div class="w3-xxlarge">สถานที่:</div>
             <select name="locationAdd" id="locationAdd" class="w3-white w3-padding-16 w3-large w3-round-large w3-border w3-border-grey " style="width:90%;outline:none;margin-left:5% ;">
             <option style="font-weight: bold;" disabled selected>เลือกสถานที่</option>
@@ -89,6 +97,7 @@
 
     <!-- ////////////////////////////Update Form/////////////////////////////////// -->
     <div id="update" style="display: none;">
+        <div class="w3-center w3-xxlarge" style="font-weight: bold;">อัพเดทเบอร์โทรศัพท์</div><br>
         <div class="w3-xxlarge">สถานที่:</div>
         <select name="locationUpdate" id="locationUpdate" class="w3-white w3-padding-16 w3-large w3-round-large w3-border w3-border-grey " style="width:90%;outline:none;margin-left:5% ;" onchange="chooseLocation()">
         <option style="font-weight: bold;" disabled selected>เลือกสถานที่</option>
@@ -159,8 +168,9 @@
 
         ////////////////////////////////////////////////////////////////////////
  function add(){
-        document.getElementById("add").style.display = "block";
-        document.getElementById("update").style.display = "none";
+        document.getElementById("headerx").style.display = "none";
+         document.getElementById("add").style.display = "block";
+        // document.getElementById("update").style.display = "none";
         document.getElementById("locationAdd").value = "เลือกสถานที่";
         document.getElementById("siteAdd").value = null;
         document.getElementById("tel1Add").value = null;
@@ -170,7 +180,8 @@
  }
  
  function update(){
-        document.getElementById("add").style.display = "none";
+        document.getElementById("headerx").style.display = "none";
+        //document.getElementById("add").style.display = "none";
         document.getElementById("update").style.display = "block";
         document.getElementById("locationUpdate").value = "เลือกสถานที่";
         document.getElementById("siteUpdate").value = "เลือก Site/กอง/ชื่อ";
@@ -353,7 +364,7 @@ async function main() {
 //   await liff.init({ liffId: "1655566430-ap6yZxdvs" })
 // }
 
-main();
+ main();
 
         </script>
         </body>
