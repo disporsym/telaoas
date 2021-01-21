@@ -261,6 +261,8 @@
             var tel1 = document.getElementById("tel1Add").value ;
             var tel2 = document.getElementById("tel2Add").value ;
             var mobile = document.getElementById("mobileAdd").value ;
+            var lineid = document.getElementById("innolineuid").value;
+            var linename = document.getElementById("innolineudpname").value;
             var webhookdatachck = {
             "topic": "html",
             "check":"sendsubmitadd",
@@ -268,7 +270,9 @@
             "site": site,
             "tel1": tel1,
             "tel2": tel2,
-            "mobile":mobile
+            "mobile":mobile,
+            "lineid" : lineid,
+            "linename": linename
                 }
             }
 
@@ -279,6 +283,8 @@
             var tel1 = document.getElementById("tel1Update").value ;
             var tel2 = document.getElementById("tel2Update").value ;
             var mobile = document.getElementById("mobileUpdate").value ;
+            var lineid = document.getElementById("innolineuid").value;
+            var linename = document.getElementById("innolineudpname").value;
             var webhookdatachck = {
             "topic": "html",
             "check":"sendsubmitupdate",
@@ -286,7 +292,9 @@
             "site": site,
             "tel1": tel1,
             "tel2": tel2,
-            "mobile":mobile
+            "mobile":mobile,
+            "lineid" : lineid,
+            "linename": linename
                 }  
             }
         cbmwebhookCheckRegist(webhookdatachck)
@@ -305,7 +313,7 @@
     //   var varinnolineudpname = profile.displayName
       //var varinnolineupic = profile.pictureUrl
       //var varinnolineumail = liff.getDecodedIDToken().email
-      sendMsglogedin(varinnolineuid,varinnolineudpname)
+      //sendMsglogedin(varinnolineuid,varinnolineudpname)
 }
 
 async function main() {
