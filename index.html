@@ -2,7 +2,7 @@
     <html lang="en">
 
     <head>
-    <title>Tel-AOASV01</title>
+    <title>Tel-AOASV001</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -140,12 +140,12 @@
 
 <br><input type="text" class="w3-border-0 w3-white w3-text-dark-grey" id="innolineuid" style="display:none;outline:none" placeholder="uid" readonly>
 <br><input type="text" class="w3-border-0 w3-white w3-text-dark-grey" id="innolineudpname" style="display:none;outline:none" placeholder="udpname" readonly>
-<br><input type="text" class="w3-border-0 w3-white w3-text-dark-grey" id="innolineupic" style="display:none;outline:none" placeholder="upic" readonly>
+<!-- <br><input type="text" class="w3-border-0 w3-white w3-text-dark-grey" id="innolineupic" style="display:none;outline:none" placeholder="upic" readonly>
 <br><input type="text" class="w3-border-0 w3-white w3-text-dark-grey" id="innolineumail" style="display:none;outline:none" placeholder="umail" readonly>
 <br><input type="text" class="w3-border-0 w3-white w3-text-dark-grey" id="innolineufriend" style="display:none;outline:none" placeholder="ufriend" readonly>
 <br><button class="w3-button w3-padding-16 w3-round-large w3-xlarge w3-blue w3-hover-light-grey w3-hover-text-blue" onclick="logOut()" style="display:none;outline:none; ">LOGOUT<i class="material-icons"> mouse</i></button>
 
-<button class="w3-button w3-padding-16 w3-round-large w3-xlarge w3-blue w3-hover-light-grey w3-hover-text-blue" onclick="temp()" style="outline:none; "><< BACK</button>
+<button class="w3-button w3-padding-16 w3-round-large w3-xlarge w3-blue w3-hover-light-grey w3-hover-text-blue" onclick="temp()" style="outline:none; "><< BACK</button> -->
 
 <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
 
@@ -296,13 +296,13 @@
 
     async function getUserProfile() {
       const profile = await liff.getProfile()
-      document.getElementById("innolinedis").append(profile.displayName) 
+    //   document.getElementById("innolinedis").append(profile.displayName) 
       document.getElementById("innolineuid").value = profile.userId
       document.getElementById("innolineudpname").value = profile.displayName
       //document.getElementById("innolineupic").value = profile.pictureUrl
       //document.getElementById("innolineumail").value = liff.getDecodedIDToken().email
-      var varinnolineuid = profile.userId
-      var varinnolineudpname = profile.displayName
+    //   var varinnolineuid = profile.userId
+    //   var varinnolineudpname = profile.displayName
       //var varinnolineupic = profile.pictureUrl
       //var varinnolineumail = liff.getDecodedIDToken().email
       sendMsglogedin(varinnolineuid,varinnolineudpname)
@@ -314,7 +314,7 @@ async function main() {
       // if (liff.isInClient()) { //isincli
         if (liff.isLoggedIn()) {
           getUserProfile();
-          getFriendship();
+        //   getFriendship();
         } 
         else {
           liff.login()
@@ -324,7 +324,7 @@ async function main() {
       //   location.replace("https://ownez.site/inno/404line"); //isincli
       // } //isincli
   })
-  await liff.init({ liffId: "1654989393-RK3ZY709" })
+  await liff.init({ liffId: "1655566430-ap6yZxdv" })
 }
 
 // async function main() {
@@ -340,7 +340,7 @@ async function main() {
 //       liff.login()
 //     }
 //   })
-//   await liff.init({ liffId: "1654989393-RK3ZY709" })
+//   await liff.init({ liffId: "1655566430-ap6yZxdvs" })
 // }
 
 main();
