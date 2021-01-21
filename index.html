@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Tel-AOASV001</title>
+    <title>Tel-AOASV002</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -191,7 +191,7 @@
             <div class="w3-container w3-center">
                 <br><button id="submitupdate"
                     class="w3-button w3-padding-16 w3-round-large w3-xlarge w3-hover-light-grey w3-hover-text-blue"
-                    onclick="submit(this.value)"
+                    onclick="submitx(this.value)"
                     style="outline:none;background-color: #00b900;color: white; ">SUBMIT</button>
                 <!-- <div id="test" class="w3-xxlarge" style="font-weight: bold;"></div> -->
             </div>
@@ -320,20 +320,16 @@
         }
 
         function submit(value) {
-           
-                    var location = document.getElementById("locationAdd").value;
-                    var site = document.getElementById("siteAdd").value;
-                    if (location != "" && site != "") {
-                        submitx(value)
-                    }
-                    else {
-                        alert("กรุณากรอกข้อมูลในช่อง required ให้ครบถ้วน")
-                    }
-                    
-              
-
+            var location = document.getElementById("locationAdd").value;
+            var site = document.getElementById("siteAdd").value;
+            if (location != "" && site != "") {
+                submitx(value)
             }
-        
+            else {
+                alert("กรุณากรอกข้อมูลในช่อง required ให้ครบถ้วน")
+            }
+        }
+
 
         function submitx(value) {
 
@@ -434,7 +430,7 @@
         //   await liff.init({ liffId: "1655566430-ap6yZxdvs" })
         // }
 
-        main();
+        //main();
 
     </script>
 </body>
